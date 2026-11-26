@@ -166,29 +166,29 @@ function render(){
 document.getElementById('catTitle').innerText=titles[cur][0];
 document.getElementById('catDesc').innerText=titles[cur][1];
 if(cur==='healthy'){
-document.getElementById('menuGrid').innerHTML=`<div class="cat-img-wrap"><img src="images/healthy.jpg.PNG" class="cat-img cat-img-tall" alt="Healthy Twist"></div><div class="card"><span class="tag">SUGAR & GLUTEN FREE</span><h3>Healthy Twist</h3><p>Sugar & Gluten Free Soft Serve<br><b>Add-ons - Sauce Drizzle:</b><br>Milk Chocolate • Dark Chocolate • Caramel • Honey • Pistachio</p><div class="big-price">500,000 LBP</div></div>`;return;
+document.getElementById('menuGrid').innerHTML=`<div class="cat-img-wrap"><img src="images/healthy.jpg.png" class="cat-img cat-img-tall" alt="Healthy Twist"></div><div class="card"><span class="tag">SUGAR & GLUTEN FREE</span><h3>Healthy Twist</h3><p>Sugar & Gluten Free Soft Serve<br><b>Add-ons - Sauce Drizzle:</b><br>Milk Chocolate • Dark Chocolate • Caramel • Honey • Pistachio</p><div class="big-price">500,000 LBP</div></div>`;return;
 }
 if(cur==='healthycorner'){
 let list=items.filter(i=>i.cat===cur);
 let groups=['Protein Pancakes (zero sugar)','Yogurt Bowls','Chia Pudding'];
-let html=`<div class="cat-img-wrap"><img src="images/healthy-corner.jpg.PNG" class="cat-img cat-img-tall" alt="Healthy Corner"></div>`;
+let html=`<div class="cat-img-wrap"><img src="images/healthy-corner.jpg.png" class="cat-img cat-img-tall" alt="Healthy Corner"></div>`;
 groups.forEach(g=>{html+=`<div class="sub-head">${g}</div><div class="list">`+list.filter(i=>i.group===g).map(i=>`<div class="item"><div><h3>${i.name}</h3><p>${i.desc}</p></div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+`</div>`;});
 document.getElementById('menuGrid').innerHTML=html;return;
 }
 if(cur==='manakish'){
 let m=items.filter(i=>i.cat==='manakish');
 let h=items.filter(i=>i.cat==='manakish-healthy');
-document.getElementById('menuGrid').innerHTML=`<div class="cat-img-wrap"><img src="images/manakish.jpg.PNG" class="cat-img cat-img-tall" alt="Manakish"></div><div class="list"><div class="list-head">PRICE</div>`+m.map(i=>`<div class="item"><div><h3>${i.name}</h3></div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+`</div><div class="list"><span class="tag-green">Make It Healthy</span><div class="list-head" style="margin-top:8px">ADD-ON</div>`+h.map(i=>`<div class="item"><div><h3>${i.name}</h3></div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+`</div>`;return;
+document.getElementById('menuGrid').innerHTML=`<div class="cat-img-wrap"><img src="images/manakish.jpg.png" class="cat-img cat-img-tall" alt="Manakish"></div><div class="list"><div class="list-head">PRICE</div>`+m.map(i=>`<div class="item"><div><h3>${i.name}</h3></div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+`</div><div class="list"><span class="tag-green">Make It Healthy</span><div class="list-head" style="margin-top:8px">ADD-ON</div>`+h.map(i=>`<div class="item"><div><h3>${i.name}</h3></div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+`</div>`;return;
 }
 let list=items.filter(i=>i.cat===cur);
 let imgHtml='';
-if(cur==='shisha'){ imgHtml=`<div class="cat-img-wrap"><img src="images/shisha.jpg.PNG" class="cat-img" alt="KOUB Shisha"></div>`; }
-if(cur==='dessert'){ imgHtml=`<div class="cat-img-wrap"><img src="images/dessert.jpg.PNG" class="cat-img" alt="KOUB Dessert"></div>`; }
-if(cur.startsWith('eats-')){ imgHtml=`<div class="cat-img-wrap"><img src="images/eats.jpg.PNG" class="cat-img" alt="KOUB Eats"></div>`; }
-if(cur==='hot'){ imgHtml=`<div class="cat-img-wrap"><img src="images/latte.jpg.PNG" class="cat-img" alt="KOUB Latte"></div>`; }
-if(cur==='coffee'){ imgHtml=`<div class="cat-img-wrap"><img src="images/coffee.jpg.PNG" class="cat-img cat-img-tall" alt="KOUB Coffee"></div>`; }
-if(cur==='iced'){ imgHtml=`<div class="cat-img-wrap"><img src="images/iced-latte.jpg.PNG" class="cat-img cat-img-tall" alt="KOUB Iced Latte"></div>`; }
-if(['beverages','tea','frappe','milkshake','smoothie','juice','addons'].includes(cur)){ imgHtml=`<div class="cat-img-wrap"><img src="images/beverages.jpg.PNG" class="cat-img" alt="KOUB Beverages"></div>`; }
+if(cur==='shisha'){ imgHtml=`<div class="cat-img-wrap"><img src="images/shisha.jpg.png" class="cat-img" alt="KOUB Shisha"></div>`; }
+if(cur==='dessert'){ imgHtml=`<div class="cat-img-wrap"><img src="images/dessert.jpg.png" class="cat-img" alt="KOUB Dessert"></div>`; }
+if(cur.startsWith('eats-')){ imgHtml=`<div class="cat-img-wrap"><img src="images/eats.jpg.png" class="cat-img" alt="KOUB Eats"></div>`; }
+if(cur==='hot'){ imgHtml=`<div class="cat-img-wrap"><img src="images/latte.jpg.png" class="cat-img" alt="KOUB Latte"></div>`; }
+if(cur==='coffee'){ imgHtml=`<div class="cat-img-wrap"><img src="images/coffee.jpg.png" class="cat-img cat-img-tall" alt="KOUB Coffee"></div>`; }
+if(cur==='iced'){ imgHtml=`<div class="cat-img-wrap"><img src="images/iced-latte.jpg.png" class="cat-img cat-img-tall" alt="KOUB Iced Latte"></div>`; }
+if(['beverages','tea','frappe','milkshake','smoothie','juice','addons'].includes(cur)){ imgHtml=`<div class="cat-img-wrap"><img src="images/beverages.jpg.png" class="cat-img" alt="KOUB Beverages"></div>`; }
 let extra='';
 if(cur==='eats-wrap'){ extra=`<div class="list" style="margin-top:-14px"><span class="tag-green">Add Veggies +50,000</span></div>`; }
 document.getElementById('menuGrid').innerHTML=imgHtml+'<div class="list"><div class="list-head">PRICE</div>'+list.map(i=>`<div class="item"><div>${i.tag?`<span class="tag">${i.tag}</span><br>`:''}<h3>${i.name}</h3>${i.desc?`<p>${i.desc}</p>`:''}</div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+'</div>'+extra;
