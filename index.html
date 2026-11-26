@@ -65,7 +65,7 @@ body{background:#F9EDE3;color:#5C3428;font-family:'Poppins',sans-serif}
 </head>
 <body>
 <div class="hero-cover">
-<img src="hero.jpg" alt="KOUB - كيف بتحب القهوة؟ معك">
+<img src="images/hero.jpg" alt="KOUB - كيف بتحب القهوة؟ معك">
 <div class="hero-overlay">
 <h1>KOUB</h1>
 <p>كيف بتحب القهوة؟ معك ☕</p>
@@ -111,7 +111,6 @@ body{background:#F9EDE3;color:#5C3428;font-family:'Poppins',sans-serif}
 <button onclick="filterItems('crepe',this)">Crepes & Waffles</button>
 <button onclick="filterItems('healthycorner',this)">Healthy Corner</button>
 <button onclick="filterItems('healthy',this)">Healthy Twist</button>
-<button onclick="filterItems('ghazle',this)">Ghazliyeh Cup</button>
 </div>
 <div class="sub-tabs" id="shishaSub"><button class="active" onclick="filterItems('shisha',this)">Shisha</button></div>
 </div>
@@ -132,7 +131,7 @@ body{background:#F9EDE3;color:#5C3428;font-family:'Poppins',sans-serif}
 <p style="font-size:11px;opacity:.6;margin-top:16px">© KOUB - Tyre Seaside</p>
 </div>
 <script>
-const titles={coffee:['Coffee','Espresso • Specialty • Houseblend'],hot:['Latte','Fresh • Hot • Made To Order'],iced:['Iced Coffee','Cold • Refreshing'],beverages:['Beverages','Fresh • Cold • Sweet'],tea:['Tea & Mojito','Hot & Cold'],frappe:['Frappe','Blended & Icy • 480,000'],milkshake:['Milkshakes','Thick & Creamy • 480,000'],smoothie:['Smoothies','Fresh & Fruity • 480,000'],juice:['Juice & Refreshers','Freshly Squeezed'],addons:['Add-ons','Make It Yours'], 'eats-croissant':['Eats - Fresh Croissants','Fresh • Buttery'],'eats-sourdough':['Eats - Sourdough','Fresh • Toasted'],'eats-sandwich':['Eats - Sandwiches','Fresh • Toasted'],'eats-wrap':['Eats - Wraps','Fresh • Rolled'],snacks:['Soups & Snacks','Starters'],breakfast:['Breakfast','Start Your Day'],manakish:['Manakish','Fresh From The Oven'],salad:['Salads','Fresh & Healthy'],pasta:['Pasta','Creamy & Fresh'],burger:['Burgers','Juicy & Loaded'],grill:['Grills & Mains','Grilled To Perfection'],sushi:['Sushi','Fresh Rolls'],dessert:['Dessert','Sweet • Fresh • Made Daily'],crepe:['Crepes & Waffles','Sweet & Fluffy'],healthycorner:['Healthy Corner','Protein • Yogurt • Chia'],healthy:['Healthy Twist','Sugar & Gluten Free'],ghazle:['Ghazliyeh Cup','Lebanese Classic'],shisha:['Shisha','Maasal • Ajami']};
+const titles={coffee:['Coffee','Espresso • Specialty • Houseblend'],hot:['Latte','Fresh • Hot • Made To Order'],iced:['Iced Coffee','Cold • Refreshing'],beverages:['Beverages','Fresh • Cold • Sweet'],tea:['Tea & Mojito','Hot & Cold'],frappe:['Frappe','Blended & Icy • 480,000'],milkshake:['Milkshakes','Thick & Creamy • 480,000'],smoothie:['Smoothies','Fresh & Fruity • 480,000'],juice:['Juice & Refreshers','Freshly Squeezed'],addons:['Add-ons','Make It Yours'], 'eats-croissant':['Eats - Fresh Croissants','Fresh • Buttery'],'eats-sourdough':['Eats - Sourdough','Fresh • Toasted'],'eats-sandwich':['Eats - Sandwiches','Fresh • Toasted'],'eats-wrap':['Eats - Wraps','Fresh • Rolled'],snacks:['Soups & Snacks','Starters'],breakfast:['Breakfast','Start Your Day'],manakish:['Manakish','Fresh From The Oven'],salad:['Salads','Fresh & Healthy'],pasta:['Pasta','Creamy & Fresh'],burger:['Burgers','Juicy & Loaded'],grill:['Grills & Mains','Grilled To Perfection'],sushi:['Sushi','Fresh Rolls'],dessert:['Dessert','Sweet • Fresh • Made Daily'],crepe:['Crepes & Waffles','Sweet & Fluffy'],healthycorner:['Healthy Corner','Protein • Yogurt • Chia'],healthy:['Healthy Twist','Sugar & Gluten Free'],shisha:['Shisha','Maasal • Ajami']};
 const items=[
 {cat:'coffee',name:'Espresso - Single',price:'290,000'},{cat:'coffee',name:'Espresso - Double',price:'340,000'},{cat:'coffee',name:'Espresso - Decaf',price:'290,000'},{cat:'coffee',name:'Macchiatos - Single',price:'300,000'},{cat:'coffee',name:'Macchiatos - Double',price:'350,000'},{cat:'coffee',name:'French Press - Houseblend',price:'350,000'},{cat:'coffee',name:'V60 - Houseblend',price:'350,000'},{cat:'coffee',name:'Americano',price:'350,000'},{cat:'coffee',name:'Lebanese Coffee',price:'440,000'},{cat:'coffee',name:'Affogato',desc:'Add Flavor + 50,000 • Cinnamon Roll, Tiramisu',price:'500,000'},{cat:'coffee',name:'Specialty',desc:'Colombia, Ethiopian, French Press or V60',price:'420,000'},
 {cat:'hot',name:'Koub Signature',desc:'A special house cup',price:'470,000',tag:'SIGNATURE'},{cat:'hot',name:'Flat White',price:'430,000'},{cat:'hot',name:'Mocha | White Mocha',price:'470,000'},{cat:'hot',name:'Latte | Cappuccino',desc:'Add Flavor + 50,000 • Caramel, Vanilla, Hazelnut, Cinnamon roll, Tiramisu • Sugar-free options available',price:'440,000'},{cat:'hot',name:'Matcha',desc:'Add Flavor + 50,000 • Caramel, Vanilla, Hazelnut • Sugar-free options available',price:'470,000'},{cat:'hot',name:'Organic Matcha',price:'500,000'},{cat:'hot',name:'Hot Chocolate (Belgian)',price:'470,000'},{cat:'hot',name:'Caramel Macchiato',price:'470,000'},{cat:'hot',name:'Spanish Latte',price:'480,000'},
@@ -167,32 +166,29 @@ function render(){
 document.getElementById('catTitle').innerText=titles[cur][0];
 document.getElementById('catDesc').innerText=titles[cur][1];
 if(cur==='healthy'){
-document.getElementById('menuGrid').innerHTML=`<div class="cat-img-wrap"><img src="healthy.jpg" class="cat-img cat-img-tall" alt="Healthy Twist"></div><div class="card"><span class="tag">SUGAR & GLUTEN FREE</span><h3>Healthy Twist</h3><p>Sugar & Gluten Free Soft Serve<br><b>Add-ons - Sauce Drizzle:</b><br>Milk Chocolate • Dark Chocolate • Caramel • Honey • Pistachio</p><div class="big-price">500,000 LBP</div></div>`;return;
-}
-if(cur==='ghazle'){
-document.getElementById('menuGrid').innerHTML=`<div class="cat-img-wrap"><img src="ghazle.jpg" class="cat-img cat-img-tall" alt="Ghazliyeh Cup"></div><div class="card"><span class="tag">SIGNATURE</span><h3>غزله CUP</h3><p>Koub Ghazliyeh Cup - With Pistachio & Caramel<br>Traditional Lebanese Ghazliyeh, Koub Style</p><div class="big-price">700,000 LBP</div></div>`;return;
+document.getElementById('menuGrid').innerHTML=`<div class="cat-img-wrap"><img src="images/healthy.jpg" class="cat-img cat-img-tall" alt="Healthy Twist"></div><div class="card"><span class="tag">SUGAR & GLUTEN FREE</span><h3>Healthy Twist</h3><p>Sugar & Gluten Free Soft Serve<br><b>Add-ons - Sauce Drizzle:</b><br>Milk Chocolate • Dark Chocolate • Caramel • Honey • Pistachio</p><div class="big-price">500,000 LBP</div></div>`;return;
 }
 if(cur==='healthycorner'){
 let list=items.filter(i=>i.cat===cur);
 let groups=['Protein Pancakes (zero sugar)','Yogurt Bowls','Chia Pudding'];
-let html=`<div class="cat-img-wrap"><img src="healthy-corner.jpg" class="cat-img cat-img-tall" alt="Healthy Corner"></div>`;
+let html=`<div class="cat-img-wrap"><img src="images/healthy-corner.jpg" class="cat-img cat-img-tall" alt="Healthy Corner"></div>`;
 groups.forEach(g=>{html+=`<div class="sub-head">${g}</div><div class="list">`+list.filter(i=>i.group===g).map(i=>`<div class="item"><div><h3>${i.name}</h3><p>${i.desc}</p></div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+`</div>`;});
 document.getElementById('menuGrid').innerHTML=html;return;
 }
 if(cur==='manakish'){
 let m=items.filter(i=>i.cat==='manakish');
 let h=items.filter(i=>i.cat==='manakish-healthy');
-document.getElementById('menuGrid').innerHTML=`<div class="cat-img-wrap"><img src="manakish.jpg" class="cat-img cat-img-tall" alt="Manakish"></div><div class="list"><div class="list-head">PRICE</div>`+m.map(i=>`<div class="item"><div><h3>${i.name}</h3></div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+`</div><div class="list"><span class="tag-green">Make It Healthy</span><div class="list-head" style="margin-top:8px">ADD-ON</div>`+h.map(i=>`<div class="item"><div><h3>${i.name}</h3></div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+`</div>`;return;
+document.getElementById('menuGrid').innerHTML=`<div class="cat-img-wrap"><img src="images/manakish.jpg" class="cat-img cat-img-tall" alt="Manakish"></div><div class="list"><div class="list-head">PRICE</div>`+m.map(i=>`<div class="item"><div><h3>${i.name}</h3></div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+`</div><div class="list"><span class="tag-green">Make It Healthy</span><div class="list-head" style="margin-top:8px">ADD-ON</div>`+h.map(i=>`<div class="item"><div><h3>${i.name}</h3></div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+`</div>`;return;
 }
 let list=items.filter(i=>i.cat===cur);
 let imgHtml='';
-if(cur==='shisha'){ imgHtml=`<div class="cat-img-wrap"><img src="shisha.jpg" class="cat-img" alt="KOUB Shisha"></div>`; }
-if(cur==='dessert'){ imgHtml=`<div class="cat-img-wrap"><img src="dessert.jpg" class="cat-img" alt="KOUB Dessert"></div>`; }
-if(cur.startsWith('eats-')){ imgHtml=`<div class="cat-img-wrap"><img src="eats.jpg" class="cat-img" alt="KOUB Eats"></div>`; }
-if(cur==='hot'){ imgHtml=`<div class="cat-img-wrap"><img src="latte.jpg" class="cat-img" alt="KOUB Latte"></div>`; }
-if(cur==='coffee'){ imgHtml=`<div class="cat-img-wrap"><img src="coffee.jpg" class="cat-img cat-img-tall" alt="KOUB Coffee"></div>`; }
-if(cur==='iced'){ imgHtml=`<div class="cat-img-wrap"><img src="iced-latte.jpg" class="cat-img cat-img-tall" alt="KOUB Iced Latte"></div>`; }
-if(['beverages','tea','frappe','milkshake','smoothie','juice','addons'].includes(cur)){ imgHtml=`<div class="cat-img-wrap"><img src="beverages.jpg" class="cat-img" alt="KOUB Beverages"></div>`; }
+if(cur==='shisha'){ imgHtml=`<div class="cat-img-wrap"><img src="images/shisha.jpg" class="cat-img" alt="KOUB Shisha"></div>`; }
+if(cur==='dessert'){ imgHtml=`<div class="cat-img-wrap"><img src="images/dessert.jpg" class="cat-img" alt="KOUB Dessert"></div>`; }
+if(cur.startsWith('eats-')){ imgHtml=`<div class="cat-img-wrap"><img src="images/eats.jpg" class="cat-img" alt="KOUB Eats"></div>`; }
+if(cur==='hot'){ imgHtml=`<div class="cat-img-wrap"><img src="images/latte.jpg" class="cat-img" alt="KOUB Latte"></div>`; }
+if(cur==='coffee'){ imgHtml=`<div class="cat-img-wrap"><img src="images/coffee.jpg" class="cat-img cat-img-tall" alt="KOUB Coffee"></div>`; }
+if(cur==='iced'){ imgHtml=`<div class="cat-img-wrap"><img src="images/iced-latte.jpg" class="cat-img cat-img-tall" alt="KOUB Iced Latte"></div>`; }
+if(['beverages','tea','frappe','milkshake','smoothie','juice','addons'].includes(cur)){ imgHtml=`<div class="cat-img-wrap"><img src="images/beverages.jpg" class="cat-img" alt="KOUB Beverages"></div>`; }
 let extra='';
 if(cur==='eats-wrap'){ extra=`<div class="list" style="margin-top:-14px"><span class="tag-green">Add Veggies +50,000</span></div>`; }
 document.getElementById('menuGrid').innerHTML=imgHtml+'<div class="list"><div class="list-head">PRICE</div>'+list.map(i=>`<div class="item"><div>${i.tag?`<span class="tag">${i.tag}</span><br>`:''}<h3>${i.name}</h3>${i.desc?`<p>${i.desc}</p>`:''}</div><div class="price"><b>${i.price}</b><small>LBP</small></div></div>`).join('')+'</div>'+extra;
